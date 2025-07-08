@@ -1,10 +1,16 @@
-// src/app/layout.tsx
-
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const geistSans = Geist({
+	variable: "--font-geist-sans",
+	subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+	variable: "--font-geist-mono",
+	subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -18,8 +24,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			{/* <body> 태그에 Tailwind 클래스를 적용하여 테스트해볼 수 있습니다. */}
-			<body className={`${inter.className} bg-slate-800 text-white`}>
+			<body
+				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+			>
 				{children}
 			</body>
 		</html>
