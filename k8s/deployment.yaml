@@ -17,6 +17,7 @@ spec:
       containers:
       - name: nextjs
         image: junholee-kr-main:1.0.0
+        imagePullPolicy: Never
         ports:
         - containerPort: 3000
         env:
